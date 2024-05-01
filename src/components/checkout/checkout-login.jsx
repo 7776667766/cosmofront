@@ -16,11 +16,11 @@ const CheckoutLogin = () => {
         </button>
       </p>
 
-      {isOpen && (
+      {/* {isOpen && (
         <div id="tpReturnCustomerLoginForm" className="tp-return-customer">
           <LoginForm />
         </div>
-      )}
+      )} */}
     </div>
   );
 };

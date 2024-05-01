@@ -47,7 +47,7 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
   return (
     <div className="tp-product-details-wrapper">
       <div className="tp-product-details-category">
-        <span>{category.name}</span>
+        <span>{category?.name}</span>
       </div>
       <h3 className="tp-product-details-title">{title}</h3>
 

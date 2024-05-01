@@ -7,7 +7,7 @@ export const authApi = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     registerUser: builder.mutation({
       query: (data) => ({
-        url: "https://shofy-backend.vercel.app/api/user/signup",
+        url: "http://localhost:7000/api/user/signup",
         method: "POST",
         body: data,
       }),
@@ -15,7 +15,7 @@ export const authApi = apiSlice.injectEndpoints({
     // signUpProvider
     signUpProvider: builder.mutation({
       query: (token) => ({
-        url: `https://shofy-backend.vercel.app/api/user/register/${token}`,
+        url: `http://localhost:7000/api/user/register/${token}`,
         method: "POST",
       }),
 
@@ -46,7 +46,7 @@ export const authApi = apiSlice.injectEndpoints({
     // login
     loginUser: builder.mutation({
       query: (data) => ({
-        url: "https://shofy-backend.vercel.app/api/user/login",
+        url: "http://localhost:7000/api/user/login",
         method: "POST",
         body: data,
       }),
@@ -77,7 +77,7 @@ export const authApi = apiSlice.injectEndpoints({
     }),
     // get me
     getUser: builder.query({
-      query: () => "https://shofy-backend.vercel.app/api/user/me",
+      query: () => "http://localhost:7000//api/user/me",
 
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {

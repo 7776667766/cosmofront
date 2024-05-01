@@ -12,12 +12,12 @@ import CheckoutArea from '@/components/checkout/checkout-area';
 
 const CheckoutPage = () => {
   const router = useRouter();
-  useEffect(() => {
-    const isAuthenticate = Cookies.get("userInfo");
-    if(!isAuthenticate){
-      router.push("/login")
-    }
-  },[router])
+  // useEffect(() => {
+  //   const isAuthenticate = Cookies.get("userInfo");
+  //   if(!isAuthenticate){
+  //     router.push("/login")
+  //   }
+  // },[router])
   return (
     <Wrapper>
       <SEO pageTitle="Checkout" />
