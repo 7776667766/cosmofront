@@ -20,11 +20,11 @@ const DetailsThumbWrapper = ({
             {imageURLs?.map((item, i) => (
               <button
                 key={i}
-                className={`nav-link ${item.img === activeImg ? "active" : ""}`}
+                className={`nav-link ${item.shade[0] === activeImg ? "active" : ""}`}
                 onClick={() => handleImageActive(item)}
               >
                 <Image
-                  src={item.img}
+                  src={item.shade[0]}
                   alt="image"
                   width={78}
                   height={100}

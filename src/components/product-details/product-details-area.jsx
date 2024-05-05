@@ -8,6 +8,7 @@ import RelatedProducts from "./related-products";
 const ProductDetailsArea = ({ productItem }) => {
   const { _id, img, imageURLs, videoId,status } = productItem || {};
   const [activeImg, setActiveImg] = useState(img);
+  console.log("active Img ",activeImg)
   const dispatch = useDispatch();
   // active image change when img change
   useEffect(() => {
@@ -16,7 +17,8 @@ const ProductDetailsArea = ({ productItem }) => {
 
   // handle image active
   const handleImageActive = (item) => {
-    setActiveImg(item.img);
+  
+    setActiveImg(item.shade[0]);
   };
   return (
     <section className="tp-product-details-area">

@@ -13,7 +13,10 @@ import { add_to_compare } from '@/redux/features/compareSlice';
 import { handleModalClose } from '@/redux/features/productModalSlice';
 
 const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBottom = false }) => {
+  console.log("activeImg 16 ",activeImg)
+
   const { sku, img, title, imageURLs, category, description, discount, price, status, reviews, tags, offerDate } = productItem || {};
+  console.log("imgURLS",imageURLs)
   const [ratingVal, setRatingVal] = useState(0);
   const [textMore, setTextMore] = useState(false);
   const dispatch = useDispatch()
@@ -79,18 +82,25 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
             </span>
           </>
         ) : (
-          <span className="tp-product-details-price new-price">${price.toFixed(2)}</span>
+          <span className="tp-product-details-price new-price">{price.toFixed(2)}</span>
         )}
       </div>
 
       {/* variations */}
       {imageURLs.some(item => item?.color && item?.color?.name) && <div className="tp-product-details-variation">
+        
         <div className="tp-product-details-variation-item">
-          <h4 className="tp-product-details-variation-title">Color :</h4>
+          <h4 className="tp-product-details-variation-title">Check Shades</h4>
           <div className="tp-product-details-variation-list">
-            {imageURLs.map((item, i) => (
+            {imageURLs.map((item, i) => 
+
+            (
+
+              console.log(`Processing item ${i}:`, item),
+
               <button onClick={() => handleImageActive(item)} key={i} type="button"
-                className={`color tp-color-variation-btn ${item.img === activeImg ? "active" : ""}`} >
+                className={`color tp-color-variation-btn ${item.shade[0] === activeImg ? "active" : ""}`} >
+                  
                 <span
                   data-bg-color={`${item.color.clrCode}`}
                   style={{ backgroundColor: `${item.color.clrCode}` }}
@@ -101,10 +111,39 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
                   </span>
                 )}
               </button>
-            ))}
+            )
+            )
+            }
           </div>
         </div>
       </div>}
+
+      <h4 className="tp-product-details-variation-title">Select Shades for Order</h4>
+      <div className="tp-product-details-variation-list">
+            {imageURLs.map((item, i) => 
+
+            (
+
+              console.log(`Processing item ${i}:`, item),
+
+              <button  key={i} type="button"
+                className={`color tp-color-variation-btn ${item.shade[0] === activeImg ? "active" : ""}`} >
+                  
+                <span
+                  data-bg-color={`${item.color.clrCode}`}
+                  style={{ backgroundColor: `${item.color.clrCode}` }}
+                ></span>
+                {item.color && item.color.name && (
+                  <span className="tp-color-variation-tootltip">
+                    {item.color.name}
+                  </span>
+                )}
+              </button>
+            )
+            )
+            }
+          </div>
+
 
       {/* if ProductDetailsCountdown true start */}
       {offerDate?.endDate && <ProductDetailsCountdown offerExpiryTime={offerDate?.endDate} />}

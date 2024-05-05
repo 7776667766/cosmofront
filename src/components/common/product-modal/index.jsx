@@ -25,6 +25,7 @@ const ProductModal = () => {
   );
   const { img, imageURLs,status } = productItem || {};
   const [activeImg, setActiveImg] = useState(img);
+  console.log("activeImg 28",activeImg)
   const [loading,setLoading] = useState(false);
   const dispatch = useDispatch();
   // active image change when img change
