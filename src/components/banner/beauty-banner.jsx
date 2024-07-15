@@ -29,19 +29,19 @@ const slider_data = [
   {
     id: 1,
     bg: slider_bg_1,
-    subtitle: "Winter Collection 2023",
+    subtitle: "Hot Deal 1",
     title: "Be your kind of beauty",
   },
   {
     id: 2,
     bg: slider_bg_2,
-    subtitle: "Top Brand Collection",
+    subtitle: "Mega Deal 2",
     title: "Use the best for you.",
   },
   {
     id: 3,
     bg: slider_bg_3,
-    subtitle: "Awesome Beauty Products",
+    subtitle: "Bundle Deal 3",
     title: "Don't Worry for Skincare",
   },
 ];
@@ -86,21 +86,21 @@ const BeautyBanner = () => {
                 <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-6 col-md-8">
                     <div className="tp-slider-content-3">
-                      <span>Winter Collection 2023</span>
+                      <span>{item.subtitle}</span>
                       <h3 className="tp-slider-title-3">
-                        Be your kind of beauty
+                        {item.title}
                       </h3>
                       <div className="tp-slider-feature-3 d-flex flex-wrap align-items-center p-relative z-index-1 mb-15">
-                        <FeatureItem icon={<Cosmetics />} title={<>High-end <br /> Cosmetics</>} />
-                        <FeatureItem icon={<VeganProduct />} title={<>Vegan <br /> Product</>} />
-                        <FeatureItem icon={<Meckoup />} title={<>Express <br /> Make-up</>} />
+                          <FeatureItem icon={<Cosmetics />} title={<>High-quality <br /> Cosmetics</>} />
+                          <FeatureItem icon={<VeganProduct />} title={<>Superior  <br /> Product</>} />
+                          <FeatureItem icon={<Meckoup />} title={<>Elite  <br /> Make-up</>} />
                       </div>
                       <div className="tp-slider-btn-3">
                         <Link
                           href="/shop"
                           className="tp-btn tp-btn-border tp-btn-border-white"
                         >
-                          Discover Now
+                        Hurry Up Shop Now
                         </Link>
                       </div>
                     </div>

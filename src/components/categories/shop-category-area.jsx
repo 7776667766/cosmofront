@@ -6,6 +6,7 @@ import ShopCategoryLoader from "../loader/shop/shop-category-loader";
 
 const ShopCategoryArea = () => {
   const { data: categories, isLoading, isError } = useGetShowCategoryQuery();
+  console.log("catagories 9",categories)
   const router = useRouter();
   // handle category route
   const handleCategoryRoute = (title) => {

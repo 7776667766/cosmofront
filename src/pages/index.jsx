@@ -19,8 +19,8 @@ export default function Home() {
       <SEO pageTitle='Home'/>
       <HeaderThree/>
       <BeautyBanner/>
-      <BeautyCategory/>
-      <BeautyFeatured/>
+      {/* <BeautyCategory/> */}
+      {/* <BeautyFeatured/> */}
       <ProductArea/>
       <BeautyOfferBanner/>
       <ProductAreaTwo/>

@@ -4,15 +4,16 @@ import Link from 'next/link';
 import { ArrowRightSmTwo } from '@/svg';
 import ProductItem from './product-item';
 import ErrorMsg from '@/components/common/error-msg';
-import { useGetProductTypeQuery } from '@/redux/features/productApi';
+import { useGetProductTypeQuery ,useGetPopularProductByTypeQuery } from '@/redux/features/productApi';
 import { HomeThreePrdLoader } from '@/components/loader';
 
 const ProductArea = () => {
-  const { data: products, isError, isLoading } =
-    useGetProductTypeQuery({ type: 'beauty', query: `topSellers=true` });
+  const { data: products, isError, isLoading } = useGetPopularProductByTypeQuery('beauty');
+
   // decide what to render
   let content = null;
 
+  console.log("products 16 top seller",products)
   if (isLoading) {
     content = (
       <HomeThreePrdLoader loading={isLoading} />
