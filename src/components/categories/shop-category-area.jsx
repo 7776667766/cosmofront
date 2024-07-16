@@ -46,10 +46,13 @@ const ShopCategoryArea = () => {
             >
               <a className="cursor-pointer">{item.parent}</a>
             </h3>
+
             <span className="tp-category-main-item">
               {item.products.length} Products
             </span>
           </div>
+          {/* <img src={item.img}></img> */}
+
         </div>
       </div>
     ));
