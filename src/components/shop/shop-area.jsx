@@ -13,6 +13,7 @@ import ShopTopRight from "./shop-top-right";
 import ResetButton from "./shop-filter/reset-button";
 
 const ShopArea = ({ all_products, products, otherProps }) => {
+  console.log("16", products)
   const {priceFilterValues,selectHandleFilter,currPage,setCurrPage} = otherProps;
   const [filteredRows, setFilteredRows] = useState(products);
   const [pageStart, setPageStart] = useState(0);
@@ -41,7 +42,7 @@ const ShopArea = ({ all_products, products, otherProps }) => {
                   maxPrice={maxPrice}
                 />
                 {/* status */}
-                <StatusFilter setCurrPage={setCurrPage} />
+                {/* <StatusFilter setCurrPage={setCurrPage} /> */}
                 {/* categories */}
                 <CategoryFilter setCurrPage={setCurrPage} />
                 {/* color */}

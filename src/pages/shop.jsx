@@ -12,6 +12,8 @@ import ShopLoader from "@/components/loader/shop/shop-loader";
 
 const ShopPage = ({ query }) => {
   const { data: products, isError, isLoading } = useGetAllProductsQuery();
+  console.log("products 15",products)
+  
   const [priceValue, setPriceValue] = useState([0, 0]);
   const [selectValue, setSelectValue] = useState("");
   const [currPage, setCurrPage] = useState(1);
@@ -56,7 +58,7 @@ const ShopPage = ({ query }) => {
     content = <div className="pb-80 text-center"><ErrorMsg msg="There was an error" /></div>;
   }
   if (!isLoading && !isError && products?.data?.length === 0) {
-    content = <ErrorMsg msg="No Products found!" />;
+    content = <ErrorMsg msg="No Products  found!" />;
   }
   if (!isLoading && !isError && products?.data?.length > 0) {
     // products
@@ -99,15 +101,20 @@ const ShopPage = ({ query }) => {
 
     // category filter
     if (query.category) {
-      product_items = product_items.filter(
-        (p) =>
-          p.parent.toLowerCase().replace("&", "").split(" ").join("-") ===
-          query.category
-      );
+      console.log("Query Category:", query.category);
+      product_items = product_items.filter((p) => {
+        const formattedParent = p.parent.toLowerCase().replace("&", "").split(" ").join("-");
+        console.log("Parent:", p.parent);
+        console.log("Formatted Parent:", formattedParent);
+        return formattedParent === query.category;
+      });
+      console.log("Filtered Items:", product_items);
     }
-
+    
     // category filter
     if (query.subCategory) {
+
+      
       product_items = product_items.filter(
         (p) =>
           p.children.toLowerCase().replace("&", "").split(" ").join("-") ===
@@ -140,6 +147,8 @@ const ShopPage = ({ query }) => {
           query.brand
       );
     }
+
+    console.log("146",product_items)
 
     content = (
       <>

@@ -10,15 +10,12 @@ const ShopCategoryArea = () => {
   const router = useRouter();
   // handle category route
   const handleCategoryRoute = (title) => {
-    router.push(
-      `/shop?category=${title
-        .toLowerCase()
-        .replace("&", "")
-        .split(" ")
-        .join("-")}`
-    );
+    console.log("13", title);
+    const formattedTitle = title.toLowerCase().replace("&", "").split(" ").join("-");
+    console.log("Formatted Title:", formattedTitle);
+    router.push(`/shop?category=${formattedTitle}`);
   };
-
+  
   // decide what to render
   let content = null;
 
