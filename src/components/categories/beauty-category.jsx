@@ -3,7 +3,7 @@ import Link from "next/link";
 // internal
 import ErrorMsg from "../common/error-msg";
 import { ArrowRightSm, ArrowRightSmTwo } from "@/svg";
-import { useGetProductTypeCategoryQuery } from "@/redux/features/categoryApi";
+import { useGetShowCategoryQuery } from "@/redux/features/categoryApi";
 import { HomeThreeCategoryLoader } from "../loader";
 import { useRouter } from "next/router";
 const BeautyCategory = () => {
@@ -12,7 +12,7 @@ const BeautyCategory = () => {
     data: categories,
     isLoading,
     isError,
-  } = useGetProductTypeCategoryQuery("beauty");
+  } = useGetShowCategoryQuery("show");
 
   // handle category route
   const handleCategoryRoute = (title) => {
@@ -39,12 +39,13 @@ const BeautyCategory = () => {
   if (!isLoading && !isError && categories?.result?.length > 0) {
     const category_items = categories.result;
     content = category_items.map((item) => (
+      console.log("item 42",item),
       <div key={item._id} className="col-lg-3 col-sm-6">
         <div className="tp-category-item-3 p-relative black-bg text-center z-index-1 fix mb-30">
           <div
             className="tp-category-thumb-3 include-bg"
-            style={{ backgroundImage: `url(${item.img})` }}
-          ></div>
+            style={{ backgroundImage: `url(${item.img.replace(/\\/g, '/')})` }}
+            ></div>
           <div className="tp-category-content-3 transition-3">
             <h3 className="tp-category-title-3">
               <a
@@ -87,7 +88,7 @@ const BeautyCategory = () => {
             <div className="col-lg-6 col-md-4">
               <div className="tp-category-more-3 text-md-end mb-55">
                 <Link href="/shop" className="tp-btn">
-                  Shop All Products <ArrowRightSmTwo />
+                  View All Products <ArrowRightSmTwo />
                 </Link>
               </div>
             </div>

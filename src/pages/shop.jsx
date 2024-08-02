@@ -103,6 +103,8 @@ const ShopPage = ({ query }) => {
     if (query.category) {
       console.log("Query Category:", query.category);
       product_items = product_items.filter((p) => {
+        console.log("p",  p);
+
         const formattedParent = p.parent.toLowerCase().replace("&", "").split(" ").join("-");
         console.log("Parent:", p.parent);
         console.log("Formatted Parent:", formattedParent);

@@ -3,8 +3,13 @@ import { Delivery, Discount, Refund, Support } from '@/svg';
 
 export const feature_data = [
   {
+    icon: <Discount />,
+    title: 'Member Discount',
+    subtitle: 'On every order over 500.00 to 1000 thousand rupees'
+  },
+  {
     icon: <Delivery />,
-    title: 'Free Delivery',
+    title: 'Fast Delivery',
     subtitle: 'Orders from all item'
   },
   {
@@ -13,17 +18,11 @@ export const feature_data = [
     subtitle: 'Money back guarantee'
   },
   {
-    icon: <Discount />,
-    title: 'Member Discount',
-    subtitle: 'Onevery order over $140.00'
-  },
-  {
     icon: <Support />,
     title: 'Support 24/7',
     subtitle: 'Contact us 24 hours a day'
   },
 ]
-
 
 const FeatureAreaTwo = () => {
   return (

@@ -36,25 +36,25 @@ export const beauty_testi_data = [
   {
     id:1,
     review:4,
-    desc:'Suscipit tellus mauris a diam maecenas. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Auctor urna nunc id cursus. Scelerisque purus semper eget duis at. Pharetra vel turpis nunc eget.',
+    desc: "The foundation from this brand provides excellent coverage and feels light on the skin. It stays on all day without getting cakey. Highly recommend for anyone looking for a natural finish.",
     user:user_1,
-    name:'Jake Weary',
-    designation:'CO Founder'
+    name:'Akbar Ali',
+    designation:'Co-Founder'
   },
   {
     id:2,
     review:3.5,
-    desc:'Suscipit tellus mauris a diam maecenas. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Auctor urna nunc id cursus. Scelerisque purus semper eget duis at. Pharetra vel turpis nunc eget.',
+    desc: "I tried the new eyeshadow palette and while the colors are beautiful, some shades lack pigmentation. However, the packaging is sleek and the formula blends well.",
     user:user_2,
     name:'Salim Rana',
-    designation:'Web Developer'
+    designation:'Consumer'
   },
   {
     id:3,
     review:5,
-    desc:'Suscipit tellus mauris a diam maecenas. Ut faucibus pulvinar elementum integer enim neque volutpat ac. Auctor urna nunc id cursus. Scelerisque purus semper eget duis at. Pharetra vel turpis nunc eget.',
+    desc: "Absolutely in love with the lipsticks from this line! The colors are vibrant, long-lasting, and they don't dry out my lips. Best purchase I've made in a while.",
     user:user_3,
-    name:'Selina Gomz',
-    designation:'CO Founder'
+    name:'Asma Sarfaraz',
+    designation:'User'
   },
 ]

@@ -18,16 +18,17 @@ export default function Home() {
     <Wrapper>
       <SEO pageTitle='Home'/>
       <HeaderThree/>
+
       <BeautyBanner/>
-      {/* <BeautyCategory/> */}
+      <BeautyCategory/>
       {/* <BeautyFeatured/> */}
       <ProductArea/>
-      <BeautyOfferBanner/>
+      {/* <BeautyOfferBanner/> */}
       <ProductAreaTwo/>
       <TrendingSpecialPrd/>
       <BeautyTestimonial/>
       <FeatureAreaTwo/>
-      <InstagramAreaThree/>
+      {/* <InstagramAreaThree/> */}
       <Footer style_3={true} />
     </Wrapper>
   )
