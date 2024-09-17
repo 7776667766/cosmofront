@@ -5,7 +5,7 @@ import { useGetProductTypeQuery } from "@/redux/features/productApi";
 import { HomeThreePrdTwoLoader } from "@/components/loader";
 
 // tabs
-const tabs = ["All Collection", "Trending", "Beauty", "Cosmetics"];
+const tabs = ["Top Products", "Kits", "Brushes", "Other Accessories"];
 
 const ProductAreaTwo = () => {
   const [activeTab, setActiveTab] = useState(tabs[0]);
@@ -51,17 +51,17 @@ const ProductAreaTwo = () => {
   }
   if (!isLoading && !isError && products?.data?.length > 0) {
     let product_items = products.data;
-    if (activeTab === "All Collection") {
+    if (activeTab === "Top Products") {
       product_items = products.data;
-    } else if (activeTab === "Trending") {
+    } else if (activeTab === "Kits") {
       product_items = products.data
         .slice()
         .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-    } else if (activeTab === "Beauty") {
+    } else if (activeTab === "Brushes") {
       product_items = products.data.filter(
         (p) => p.category.name === "Discover Skincare"
       );
-    } else if (activeTab === "Cosmetics") {
+    } else if (activeTab === "Other Accessories") {
       product_items = products.data.filter(
         (p) => p.category.name === "Awesome Lip Care"
       );
@@ -74,13 +74,13 @@ const ProductAreaTwo = () => {
           <div className="col-xl-6 col-lg-6">
             <div className="tp-section-title-wrapper-3 mb-45 text-center text-lg-start">
               <span className="tp-section-title-pre-3">
-                Best Seller This Week’s
+               SHEAFFER
               </span>
-              <h3 className="tp-section-title-3">Enjoy the best quality</h3>
+              <h3 className="tp-section-title-3"> Sale</h3>
             </div>
           </div>
           <div className="col-xl-6 col-lg-6">
-            <div className="tp-product-tab-2 tp-product-tab-3  tp-tab mb-50 text-center">
+            <div className="tp-product-tab-2 tp-p roduct-tab-3  tp-tab mb-50 text-center">
               <div className="tp-product-tab-inner-3 d-flex align-items-center justify-content-center justify-content-lg-end">
                 <nav>
                   <div

@@ -1,23 +1,31 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 // internal
-import { ArrowRightSmTwo } from '@/svg';
-import ProductItem from './product-item';
-import ErrorMsg from '@/components/common/error-msg';
-import { useGetProductTypeQuery ,useGetPopularProductByTypeQuery } from '@/redux/features/productApi';
-import { HomeThreePrdLoader } from '@/components/loader';
+import { ArrowRightSmTwo } from "@/svg";
+import ProductItem from "./product-item";
+import ErrorMsg from "@/components/common/error-msg";
+import {
+  useGetProductTypeQuery,
+  useGetPopularProductByTypeQuery,
+} from "@/redux/features/productApi";
+import { HomeThreePrdLoader } from "@/components/loader";
 
 const ProductArea = () => {
-  const { data: products, isError, isLoading } = useGetPopularProductByTypeQuery('beauty');
+  const {
+    data: products,
+    isError,
+    isLoading,
+  } = useGetPopularProductByTypeQuery("beauty");
 
   // decide what to render
   let content = null;
 
-  console.log("products 16 top seller",products)
+  console.log("products 16 top seller", products);
   if (isLoading) {
-    content = (
-      <HomeThreePrdLoader loading={isLoading} />
-    );
+    content = <HomeThreePrdLoader loading={isLoading} />;
+    {
+      /* <BeautyCategory/> */
+    }
   }
   if (!isLoading && isError) {
     content = <ErrorMsg msg="There was an error" />;
@@ -31,7 +39,7 @@ const ProductArea = () => {
       <div key={prd._id} className="col-lg-3 col-md-4 col-sm-6">
         <ProductItem product={prd} />
       </div>
-    ))
+    ));
   }
   return (
     <>
@@ -39,23 +47,25 @@ const ProductArea = () => {
         <div className="container">
           <div className="row align-items-end">
             <div className="col-lg-6 col-md-8">
-              <div className="tp-section-title-wrapper-3 mb-55">
-                <span className="tp-section-title-pre-3">Shop by Category</span>
-                <h3 className="tp-section-title-3">Best sellers in beauty</h3>
+              <div className="tp-section-title-wrapper-3 mb-55 text-center">
+                <h3 className="tp-section-title-3">SHEAFFER MAKEUP DEALS</h3>
               </div>
             </div>
-            <div className="col-lg-6 col-md-4">
-              <div className="tp-product-more-3 text-md-end mb-65">
-                <Link href="/shop" className="tp-btn">
-                  Shop All Products
-                  {" "}<ArrowRightSmTwo />
-                </Link>
-              </div>
-            </div>
+            {/* <div className="col-lg-6 col-md-4">
+                <div className="tp-product-more-3 text-md-end mb-65">
+                  <Link href="/shop" className="tp-btn">
+                    Shop All Products
+                    {" "}<ArrowRightSmTwo />
+                  </Link>
+                </div>
+            </div> */}
           </div>
-          <div className="row">
-            {content}
-          </div>
+          <div className="row">{content}</div>
+        </div>
+        <div className="tp-product-more-3 text-center">
+          <Link href="/shop" className="tp-btn">
+            View All Products <ArrowRightSmTwo />
+          </Link>
         </div>
       </section>
     </>

@@ -13,20 +13,21 @@ import { add_to_compare } from '@/redux/features/compareSlice';
 import { handleModalClose } from '@/redux/features/productModalSlice';
 
 const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBottom = false }) => {
-  console.log("activeImg 16 ", activeImg)
-
-  const { sku, img, title, imageURLs, category, description, discount, price, status, reviews, tags, offerDate } = productItem || {};
-  console.log("imgURLS", imageURLs)
-  const [ratingVal, setRatingVal] = useState(0);
   const [shade, setShade] = useState(null);
 
+  console.log("activeImg 16 ", activeImg)
+
+  const { sku, img, title, imageURLs, category, description, discount, price, status, reviews, tags, offerDate  } = productItem || {};
+  console.log("imgURLS", imageURLs)
+  const [ratingVal, setRatingVal] = useState(0);
+  
   const [textMore, setTextMore] = useState(false);
   const dispatch = useDispatch()
 
   useEffect(() => {
     if (reviews && reviews.length > 0) {
       const rating =
-        reviews.reduce((acc, review) => acc + review.rating, 0) /
+        reviews.reduce((acc, review) => acc + review.rating, 0) 
         reviews.length;
       setRatingVal(rating);
     } else {
@@ -35,8 +36,10 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
   }, [reviews]);
 
   // handle add product
-  const handleAddProduct = (prd) => {
-    dispatch(add_cart_product(prd));
+  const handleAddProduct = (prd,shade
+  ) => {
+    console.log("prod+shade",prd,shade),
+    dispatch(add_cart_product(prd,shade));
   };
 
   //handleshadeshow
@@ -172,7 +175,7 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
           <ProductQuantity />
           {/* product quantity */}
           <div className="tp-product-details-add-to-cart mb-15 w-100">
-            <button onClick={() => handleAddProduct(productItem)} disabled={status === 'out-of-stock'} className="tp-product-details-add-to-cart-btn w-100">Add To Cart</button>
+            <button onClick={() => handleAddProduct(productItem,shade)} disabled={status === 'out-of-stock'} className="tp-product-details-add-to-cart-btn w-100">Add To Cart</button>
           </div>
         </div>
         <Link href="/cart" onClick={() => dispatch(handleModalClose())}>

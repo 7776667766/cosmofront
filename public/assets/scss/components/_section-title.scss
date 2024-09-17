@@ -81,9 +81,9 @@
 .#{$theme-prifix}-section{
     &-title-3{
         font-weight: 500;
-        font-size: 44px;      
+        font-size: 30px;      
         @media #{$xs}{
-            font-size: 35px;
+            font-size: 20px;
         }
     }
     &-title-pre-3{

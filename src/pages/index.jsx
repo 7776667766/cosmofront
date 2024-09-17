@@ -20,7 +20,7 @@ export default function Home() {
       <HeaderThree/>
 
       <BeautyBanner/>
-      <BeautyCategory/>
+      {/* <BeautyCategory/> */}
       {/* <BeautyFeatured/> */}
       <ProductArea/>
       {/* <BeautyOfferBanner/> */}
