@@ -29,21 +29,16 @@ const slider_data = [
   {
     id: 1,
     bg: slider_bg_1,
-    subtitle: "Hot Deal 1",
-    title: "Be your kind of beauty",
+   
   },
-  {
-    id: 2,
-    bg: slider_bg_2,
-    subtitle: "Mega Deal 2",
-    title: "Use the best for you.",
-  },
-  {
-    id: 3,
-    bg: slider_bg_3,
-    subtitle: "Bundle Deal 3",
-    title: "Don't Worry for Skincare",
-  },
+  // {
+  //   id: 2,
+  //   bg: slider_bg_2,
+  // },
+  // {
+  //   id: 3,
+  //   bg: slider_bg_3,
+  // },
 ];
 
 // feature item 
@@ -68,57 +63,32 @@ const BeautyBanner = () => {
   return (
     <>
       <section className="tp-slider-area p-relative z-index-1">
-        <Swiper
-          {...slider_setting}
-          modules={[Navigation, EffectFade, Pagination]}
-          className="tp-slider-active-3 swiper-container"
-        >
+      
           {slider_data.map((item) => (
             <SwiperSlide
               key={item.id}
-              className="tp-slider-item-3 tp-slider-height-3 p-relative black-bg d-flex align-items-center"
+              className="tp-slider-item-3 tp-slider-height-3 p-relative d-flex align-items-center"
             >
               <div
-                className="tp-slider-thumb-3 include-bg"
+                className="tp-slider-thumb-3 include-bg     " 
                 style={{ backgroundImage: `url(${item.bg.src})` }}
               ></div>
               <div className="container">
                 <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-6 col-md-8">
-                    <div className="tp-slider-content-3">
-                      <span>{item.subtitle}</span>
-                      <h3 className="tp-slider-title-3">
-                        {item.title}
-                      </h3>
-                      <div className="tp-slider-feature-3 d-flex flex-wrap align-items-center p-relative z-index-1 mb-15">
-                          <FeatureItem icon={<Cosmetics />} title={<>High-quality <br /> Cosmetics</>} />
-                          <FeatureItem icon={<VeganProduct />} title={<>Superior  <br /> Product</>} />
-                          <FeatureItem icon={<Meckoup />} title={<>Elite  <br /> Make-up</>} />
-                      </div>
                       <div className="tp-slider-btn-3">
                         <Link
                           href="/shop"
                           className="tp-btn tp-btn-border tp-btn-border-white"
                         >
-                        Hurry Up Shop Now
+                          Shop Now
                         </Link>
-                      </div>
-                    </div>
+                   </div>
                   </div>
                 </div>
               </div>
             </SwiperSlide>
           ))}
-          <div className="tp-swiper-dot tp-slider-3-dot d-sm-none"></div>
-          <div className="tp-slider-arrow-3 d-none d-sm-block">
-            <button type="button" className="tp-slider-3-button-prev">
-              <ArrowPrev />
-            </button>
-            <button type="button" className="tp-slider-3-button-next">
-              <ArrowNext />
-            </button>
-          </div>
-        </Swiper>
       </section>
     </>
   );

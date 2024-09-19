@@ -461,18 +461,18 @@
         }
     }
     &-height-3{
-        min-height: 950px;
+        min-height: 700px;
 
         @media #{$lg}{
-            min-height: 850px;
+            min-height: 650px;
         }
 
         @media #{$md}{
-            min-height: 750px;
+            min-height: 580px;
         }
 
         @media #{$sm, $xs}{
-            min-height: 650px;
+            min-height: 300px;
         }
     }
     &-thumb-3{
@@ -1059,7 +1059,7 @@
     & .slick-slider{
         & .slick-list{
             padding: 0px !important;
-        }
+        }   
     }
 }
 .slick-active.slick-current {
