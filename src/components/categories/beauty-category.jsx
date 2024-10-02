@@ -39,13 +39,14 @@ const BeautyCategory = () => {
   if (!isLoading && !isError && categories?.result?.length > 0) {
     const category_items = categories.result;
     content = category_items.map((item) => (
-      console.log("item 42",item),
-      <div key={item._id} className="col-lg-3 col-sm-6">
+      <div key={item._id} className="col-2">
         <div className="tp-category-item-3 p-relative black-bg text-center z-index-1 fix mb-30">
           <div
             className="tp-category-thumb-3 include-bg"
             style={{ backgroundImage: `url(${item.img.replace(/\\/g, '/')})` }}
-            ></div>
+            >
+
+            </div>
           <div className="tp-category-content-3 transition-3">
             <h3 className="tp-category-title-3">
               <a
@@ -55,9 +56,9 @@ const BeautyCategory = () => {
                 {item.parent}
               </a>
             </h3>
-            <span className="tp-categroy-ammount-3">
+            {/* <span className="tp-categroy-ammount-3">
               {item.products.length} Products
-            </span>
+            </span> */}
             <div className="tp-category-btn-3">
               <a
                 onClick={() => handleCategoryRoute(item.parent)}

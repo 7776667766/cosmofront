@@ -101,7 +101,7 @@ const MobileMenus = () => {
             ))}
           </div>
         </div>
-                    {menu.home_pages.map((home, i) => (
+                    {menu?.home_pages?.map((home, i) => (
                       <div key={i} className="col">
                         <div className="home-menu-item">
                           {/* <Link href={home.link}>
@@ -127,16 +127,16 @@ const MobileMenus = () => {
                   </button>
                 </a>
                 <ul className={`tp-submenu ${isActiveMenu === menu.title ? 'active':''}`}>
-                  {menu.sub_menus.map((b, i) => (
+                  {menu?.sub_menus?.map((b, i) => (
                     <li key={i}>
-                      <Link href={b.link}>{b.title}</Link>
+                      <Link href={b?.link}>{b?.title}</Link>
                     </li>
                   ))}
                 </ul>
               </li>
             ) : (
               <li key={menu.id}>
-                <Link href={menu.link}>{menu.title}</Link>
+                <Link href={menu?.link}>{menu?.title}</Link>
               </li>
             )}
           </ul>

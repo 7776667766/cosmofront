@@ -36,7 +36,7 @@ const ShopArea = ({ all_products, products, otherProps }) => {
           <div className="row">
             <div className="col-xl-3 col-lg-4">
               <div className="tp-shop-sidebar mr-10">
-                {/* filter */}
+                filter
                 <PriceFilter
                   priceFilterValues={priceFilterValues}
                   maxPrice={maxPrice}
@@ -44,15 +44,15 @@ const ShopArea = ({ all_products, products, otherProps }) => {
                 {/* status */}
                 {/* <StatusFilter setCurrPage={setCurrPage} /> */}
                 {/* categories */}
-                <CategoryFilter setCurrPage={setCurrPage} />
+                {/* <CategoryFilter setCurrPage={setCurrPage} /> */}
                 {/* color */}
-                <ColorFilter setCurrPage={setCurrPage} />
+                {/* <ColorFilter setCurrPage={setCurrPage} /> */}
                 {/* product rating */}
                 {/* <TopRatedProducts /> */}
                 {/* brand */}
                 {/* <ProductBrand setCurrPage={setCurrPage} /> */}
                 {/* reset filter */}
-                <ResetButton/>
+                {/* <ResetButton/> */}
               </div>
             </div>
             <div className="col-xl-9 col-lg-8">

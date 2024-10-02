@@ -188,12 +188,12 @@
 .#{$theme-prifix}-category{
     $self3: &;
     &-item-3{
-        min-height: 200px;
+        min-height: 100px;
 
         &:hover{
             #{$self3}{
                 &-content-3{
-                    bottom: 35px;
+                    bottom: 5px;
                 }
                 &-btn-3{
                     visibility: visible;
@@ -209,6 +209,7 @@
                     &::before{
                         visibility: visible;
                         opacity: 1;
+                        
                     }
                 }
             }
@@ -237,8 +238,8 @@
         }
     }
     &-title-3{
-        font-weight: 600;
-        font-size: 24px;
+        font-weight: 500;
+        font-size: 11px;
         color: var(--tp-common-white);
         margin-bottom: 0;
 
@@ -255,7 +256,7 @@
     }
     &-content-3{
         position: absolute;
-        bottom: -18px;
+        bottom: -24px;
         left: 0;
         right: 0;
         width: 100%;
