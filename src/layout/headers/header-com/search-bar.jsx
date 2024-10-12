@@ -10,7 +10,7 @@ const SearchBar = ({ isSearchOpen, setIsSearchOpen }) => {
     setCategory(value);
   };
 
-  const categories = ["electronics", "fashion", "beauty", "jewelry"];
+  // const categories = ["fa", "fashion", "beauty", "jewelry"];
   return (
     <>
       <section
@@ -40,7 +40,7 @@ const SearchBar = ({ isSearchOpen, setIsSearchOpen }) => {
                       <i className="flaticon-search-1"></i>
                     </button>
                   </div>
-                  <div className="tp-search-category">
+                  {/* <div className="tp-search-category">
                     <span>Search by : </span>
                     {categories.map((c, i) => (
                       <a
@@ -52,7 +52,7 @@ const SearchBar = ({ isSearchOpen, setIsSearchOpen }) => {
                         {i < categories.length - 1 && ", "}
                       </a>
                     ))}
-                  </div>
+                  </div> */}
                 </form>
               </div>
             </div>

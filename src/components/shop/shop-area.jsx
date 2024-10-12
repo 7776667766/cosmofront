@@ -17,9 +17,12 @@ const ShopArea = ({ all_products, products, otherProps }) => {
   const {priceFilterValues,selectHandleFilter,currPage,setCurrPage} = otherProps;
   const [filteredRows, setFilteredRows] = useState(products);
   const [pageStart, setPageStart] = useState(0);
-  const [countOfPage, setCountOfPage] = useState(12);
+  console.log("pageStart",pageStart)
+  const [countOfPage, setCountOfPage] = useState(6);
+  console.log("countOfPage",countOfPage)
 
   const paginatedData = (items, startPage, pageCount) => {
+    console.log("items",items)
     setFilteredRows(items);
     setPageStart(startPage);
     setCountOfPage(pageCount);
@@ -36,23 +39,25 @@ const ShopArea = ({ all_products, products, otherProps }) => {
           <div className="row">
             <div className="col-xl-3 col-lg-4">
               <div className="tp-shop-sidebar mr-10">
-                filter
                 <PriceFilter
                   priceFilterValues={priceFilterValues}
                   maxPrice={maxPrice}
                 />
                 {/* status */}
-                {/* <StatusFilter setCurrPage={setCurrPage} /> */}
                 {/* categories */}
-                {/* <CategoryFilter setCurrPage={setCurrPage} /> */}
+                <div className="d-none d-sm-block" >
+                <StatusFilter setCurrPage={setCurrPage} />
+
+                <CategoryFilter setCurrPage={setCurrPage} />
                 {/* color */}
-                {/* <ColorFilter setCurrPage={setCurrPage} /> */}
+                <ColorFilter setCurrPage={setCurrPage} />
                 {/* product rating */}
                 {/* <TopRatedProducts /> */}
                 {/* brand */}
                 {/* <ProductBrand setCurrPage={setCurrPage} /> */}
                 {/* reset filter */}
-                {/* <ResetButton/> */}
+                <ResetButton/>
+                </div>
               </div>
             </div>
             <div className="col-xl-9 col-lg-8">
@@ -128,7 +133,7 @@ const ShopArea = ({ all_products, products, otherProps }) => {
                     <div className="tp-pagination">
                       <Pagination
                         items={products}
-                        countOfPage={12}
+                        countOfPage={6}
                         paginatedData={paginatedData}
                         currPage={currPage}
                         setCurrPage={setCurrPage}

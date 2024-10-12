@@ -34,14 +34,14 @@ const HeaderTwo = ({ style_2 = false }) => {
                       <a href="#">
                         <span>
                           <Facebook />
-                        </span> 7500k Followers
+                        </span> 100k Followers
                       </a>
                     </div>
                     <div className="tp-header-info-item">
                       <a href="tel:402-763-282-46">
                         <span>
                           <PhoneTwo />
-                        </span> +(966) 595 035 008
+                        </span> 03007916909
                       </a>
                     </div>
                   </div>
@@ -75,7 +75,7 @@ const HeaderTwo = ({ style_2 = false }) => {
                   </div>
                   <div className="col-xl-5 col-lg-7 col-md-7 col-sm-8 col-6">
                     <div className="tp-header-bottom-right d-flex align-items-center justify-content-end pl-30">
-                      <div className="tp-header-search-2 d-none d-sm-block">
+                      <div className="tp-header-search-2 ">
                         <form onSubmit={handleSubmit}>
                           <input
                             onChange={(e) => setSearchText(e.target.value)}

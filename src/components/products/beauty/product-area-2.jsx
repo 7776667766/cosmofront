@@ -76,7 +76,7 @@ const ProductAreaTwo = () => {
               <span className="tp-section-title-pre-3">
                SHEAFFER
               </span>
-              <h3 className="tp-section-title-3"> Sale</h3>
+              <h3 className="tp-section-title-3"> PRODUCTS</h3>
             </div>
           </div>
           <div className="col-xl-6 col-lg-6">

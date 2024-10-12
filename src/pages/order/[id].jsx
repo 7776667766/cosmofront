@@ -125,7 +125,7 @@ const SingleOrder = ({ params }) => {
                   <div className="col-lg-3 col-md-4">
                     <div className="invoice__discount-cost mb-30">
                       <h5 className="mb-0">Discount</h5>
-                      <p className="tp-font-medium">${discount.toFixed(2)}</p>
+                      <p className="tp-font-medium">Rs{discount.toFixed(2)}</p>
                     </div>
                   </div>
                   <div className="col-lg-3 col-md-4">
