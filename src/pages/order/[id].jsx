@@ -101,8 +101,8 @@ const SingleOrder = ({ params }) => {
                         <td>{i + 1}</td>
                         <td>{item.title}</td>
                         <td>{item.orderQuantity}</td>
-                        <td>${item.price}</td>
-                        <td>${item.price * item.orderQuantity}</td>
+                        <td>Rs {item.price}</td>
+                        <td>Rs {item.price * item.orderQuantity}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -132,7 +132,7 @@ const SingleOrder = ({ params }) => {
                     <div className="invoice__total-ammount mb-30">
                       <h5 className="mb-0">Total Ammount</h5>
                       <p className="tp-font-medium text-danger">
-                        <strong>${parseInt(totalAmount).toFixed(2)}</strong>
+                        <strong>RS{parseInt(totalAmount).toFixed(2)}</strong>
                       </p>
                     </div>
                   </div>

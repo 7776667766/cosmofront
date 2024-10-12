@@ -79,12 +79,12 @@ const BeautyCategory = () => {
         <div className="container">
           <div className="row align-items-end">
             <div className="col-lg-6 col-md-8">
-              <div className="tp-section-title-wrapper-3 mb-45">
+              {/* <div className="tp-section-title-wrapper-3 mb-45">
                 <span className="tp-section-title-pre-3">
                   Product Collection
                 </span>
                 <h3 className="tp-section-title-3">Discover our products</h3>
-              </div>
+              </div> */}
             </div>
             <div className="col-lg-6 col-md-4">
               <div className="tp-category-more-3 text-md-end mb-55">

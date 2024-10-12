@@ -57,10 +57,10 @@ const ProductArea = () => {
     content = <>
       <div className="row align-items-end">
         <div className="col-xl-6 col-lg-6">
-          <div className="tp-section-title-wrapper-4 mb-40 text-center text-lg-start">
+          {/* <div className="tp-section-title-wrapper-4 mb-40 text-center text-lg-start">
             <span className="tp-section-title-pre-4">Product Collection</span>
             <h3 className="tp-section-title-4">Discover our Products</h3>
-          </div>
+          </div> */}
         </div>
         <div className="col-xl-6 col-lg-6">
           <div className="tp-product-tab-2 tp-product-tab-3  tp-tab mb-45">

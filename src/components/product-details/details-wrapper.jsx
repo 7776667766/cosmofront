@@ -14,13 +14,8 @@ import { handleModalClose } from '@/redux/features/productModalSlice';
 
 const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBottom = false }) => {
   const [shade, setShade] = useState(null);
-
-  console.log("activeImg 16 ", activeImg)
-
   const { sku, img, title, imageURLs, category, description, discount, price, status, reviews, tags, offerDate  } = productItem || {};
-  console.log("imgURLS", imageURLs)
   const [ratingVal, setRatingVal] = useState(0);
-  
   const [textMore, setTextMore] = useState(false);
   const dispatch = useDispatch()
 
@@ -43,8 +38,6 @@ const DetailsWrapper = ({ productItem, handleImageActive, activeImg, detailsBott
   };
 
   //handleshadeshow
-
-
   const handleshadeclick = (shade) => {
     console.log("shade", shade)
     setShade(shade)

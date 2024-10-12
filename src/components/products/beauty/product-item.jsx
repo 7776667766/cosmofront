@@ -39,7 +39,7 @@ const ProductItem = ({ product, prdCenter = false,primary_style=false }) => {
         </div>
 
         {/* product action */}
-        <div className="tp-product-action-3 tp-product-action-blackStyle">
+        {/* <div className="tp-product-action-3 tp-product-action-blackStyle">
           <div className="tp-product-action-item-3 d-flex flex-column">
             {isAddedToCart ? (
               <Link
@@ -75,9 +75,9 @@ const ProductItem = ({ product, prdCenter = false,primary_style=false }) => {
             </button>
 
           </div>
-        </div>
+        </div> */}
 
-        <div className="tp-product-add-cart-btn-large-wrapper">
+        {/* <div className="tp-product-add-cart-btn-large-wrapper">
           {isAddedToCart ? (
             <Link
               href="/cart"
@@ -95,7 +95,7 @@ const ProductItem = ({ product, prdCenter = false,primary_style=false }) => {
               Add To Cart
             </button>
           )}
-        </div>
+        </div> */}
       </div>
       <div className="tp-product-content-3">
         <div className="tp-product-tag-3">
