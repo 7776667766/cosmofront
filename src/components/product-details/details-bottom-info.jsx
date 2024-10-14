@@ -41,12 +41,12 @@ const DetailsBottomInfo = ({sku,category,tag}) => {
 
       {/* product-details-msg */}
 
-      <div className="tp-product-details-msg mb-15">
+      {/* <div className="tp-product-details-msg mb-15">
         <ul>
           <li>30 days easy returns</li>
           <li>Estimated to be delivered in just 2-3 working days.</li>
         </ul>
-      </div>
+      </div> */}
       {/* product-details-payment */}
       {/* <div className="tp-product-details-payment d-flex align-items-center flex-wrap justify-content-between">
         <p>

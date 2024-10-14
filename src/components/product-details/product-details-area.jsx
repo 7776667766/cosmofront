@@ -8,14 +8,12 @@ import RelatedProducts from "./related-products";
 const ProductDetailsArea = ({ productItem }) => {
   const { _id, img, imageURLs, videoId,status } = productItem || {};
   const [activeImg, setActiveImg] = useState(img);
-  console.log("active Img ",activeImg)
   const dispatch = useDispatch();
-  // active image change when img change
+
   useEffect(() => {
     setActiveImg(img);
   }, [img]);
 
-  // handle image active
   const handleImageActive = (item) => {
   
     setActiveImg(item.shade[0]);
