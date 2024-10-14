@@ -28,7 +28,7 @@ const BeautyCategory = () => {
   let content = null;
 
   if (isLoading) {
-    content = <HomeThreeCategoryLoader loading={isLoading}/>;
+    content = <HomeThreeCategoryLoader loading={isLoading} />;
   }
   if (!isLoading && isError) {
     content = <ErrorMsg msg="There was an error" />;
@@ -39,27 +39,27 @@ const BeautyCategory = () => {
   if (!isLoading && !isError && categories?.result?.length > 0) {
     const category_items = categories.result;
     content = category_items.map((item) => (
-      <div key={item._id} className="col-2">
-        <div className="tp-category-item-3 p-relative black-bg text-center z-index-1 fix mb-30">
+      <div key={item._id} className="col-4 col-lg-2 ">
+        <div className="tp-category-item-3 p-relative black-bg text-center z-index-1 fix  rounded-circle ">
           <div
-            className="tp-category-thumb-3 include-bg"
-            style={{ backgroundImage: `url(${item.img.replace(/\\/g, '/')})` }}
-            >
+            className="tp-category-thumb-3 cursor-pointer include-bg ratio ratio-16x9"
+            style={{ backgroundImage: `url(${item.img.replace(/\\/g, "/")})` }}
+            onClick={() => handleCategoryRoute(item.parent)}
+          ></div>
+          {/* {item.parent} */}
 
-            </div>
           <div className="tp-category-content-3 transition-3">
-            <h3 className="tp-category-title-3">
+            {/* <h3 className="tp-category-title-3">
               <a
                 className="cursor-pointer"
                 onClick={() => handleCategoryRoute(item.parent)}
               >
-                {item.parent}
               </a>
-            </h3>
+            </h3> */}
             {/* <span className="tp-categroy-ammount-3">
               {item.products.length} Products
             </span> */}
-            <div className="tp-category-btn-3">
+            {/* <div className="tp-category-btn-3">
               <a
                 onClick={() => handleCategoryRoute(item.parent)}
                 className="cursor-pointer tp-link-btn tp-link-btn-2"
@@ -67,9 +67,10 @@ const BeautyCategory = () => {
                 View Now
                 <ArrowRightSm />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
+        <div className="mt-6px">{item.parent}</div>
       </div>
     ));
   }
@@ -80,7 +81,7 @@ const BeautyCategory = () => {
           <div className="row align-items-end">
             <div className="col-lg-6 col-md-8">
               {/* <div className="tp-section-title-wrapper-3 mb-45">
-                <span className="tp-section-title-pre-3">
+                <span className="tp-section-title-pre-3"> 
                   Product Collection
                 </span>
                 <h3 className="tp-section-title-3">Discover our products</h3>

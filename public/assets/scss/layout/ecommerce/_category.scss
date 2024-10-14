@@ -183,13 +183,12 @@
     }
 }
 
-
 /* home beauty */
 .#{$theme-prifix}-category{
     $self3: &;
     &-item-3{
-        min-height: 100px;
-
+height: 90px;
+width: 90px;
         &:hover{
             #{$self3}{
                 &-content-3{
